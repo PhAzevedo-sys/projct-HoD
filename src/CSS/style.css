@@ -1,0 +1,109 @@
+body {
+    font-family: "UnJamoBatang", sans-serif;
+    /* background-color: slategray; */
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+@font-face {
+    font-family: "GOT";
+    src: url(../fontes/GOT.ttf)
+}
+
+.carrossel {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: -1;
+}
+
+.informacoes {
+    display: none;
+}
+
+.informacoes.ativa {
+    display: block;
+}
+
+.conteudo {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    min-height: 100vh;
+    /* background-color: aqua; */
+}
+
+.informacoes h1{
+    /* background-color: brown; */
+    font-size: 35px;
+    color: #FFFFFF;
+    margin-bottom: 80px;
+    font-family: "GOT";
+    letter-spacing: 5px;
+}
+
+.informacoes .descricao {
+    /* background-color: cadetblue; */
+    width: 49%;
+    font-size: 24px;
+    color: #FFFFFF;
+    line-height: 40px;
+    height: 300px;
+    overflow: auto;
+    padding-right: 15px;
+}
+
+.botoes-carrossel{
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.botoes-carrossel .botao{
+    background-color: #ffffff;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    border: 2px solid transparent;
+    cursor: pointer;
+    border-color: #FFFFFF;
+}
+
+.botoes-carrossel .botao.selecionado{
+    background-color: #6d0012;
+}
+
+.imagem{
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    display: none;    
+}
+
+.imagem.ativa{
+    display: block;
+    animation: mudarImagem 0.8s;
+}
+
+@keyframes mudarImagem{
+    from{
+        opacity: 0.75;
+    }
+    to{
+        opacity: 1;
+    }
+}
+
+
+main:after{
+    content: "";
+    min-height: 100vh;
+    width: 100vw;
+    /* background-color: red; */
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: linear-gradient(128deg, rgba(0, 0, 10, 100) 5%, rgba(0, 0, 0, 0) 30%, rgba(0, 0, 10, 1) 90%);
+    z-index: -1;
+} 
